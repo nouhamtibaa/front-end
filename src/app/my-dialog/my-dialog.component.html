@@ -1,0 +1,21 @@
+
+<h3> Votre demande a été bien enregistrée </h3>
+<!--
+<h2 mat-dialog-title> titel </h2>
+
+<mat-dialog-content>
+  <p> whould youlike to sabe?</p>
+
+</mat-dialog-content>
+-->
+
+<h5 *ngIf="this.etudiant.compteur !== 0"> ( vous pouvez postuler seulement pour {{this.etudiant.compteur}} autres postes ) </h5>
+<h5 *ngIf="this.etudiant.compteur === 0"> ( vous avez postuler sur les 3 postes )  </h5>
+<mat-dialog-actions>
+
+
+  <button  mat-raised-button (click)="save()"> OK </button>
+
+</mat-dialog-actions>
+
+

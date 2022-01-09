@@ -1,0 +1,131 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <div class="container">
+    <div class="panel-heading">
+      <img src="../../assets/logo2.PNG" alt="">
+    </div>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+
+      <div class="navbar-nav ml-auto">
+        <div class="navbar-nav">
+          <a href="" class="nav-item nav-link active">Acceuil</a>
+          <a href="http://www.made-in-tunisia.net/vitrine/contact.php?tc1=lKqXnq2S" class="nav-item nav-link">Contact</a>
+          <a href="https://www.keejob.com/offres-emploi/companies/5340/tritux/" class="nav-item nav-link">Emplacement</a>
+          <a href="https://www.tritux.fr/about-me/" class="nav-item nav-link">A propos de nous </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+
+  $('document').ready(function(){
+    $('input[type="text"], input[type="email"], textarea').focus(function(){
+      var background = $(this).attr('id');
+      $('#' + background + '-form').addClass('formgroup-active');
+      $('#' + background + '-form').removeClass('formgroup-error');
+    });
+    $('input[type="text"], input[type="email"], textarea').blur(function(){
+      var background = $(this).attr('id');
+      $('#' + background + '-form').removeClass('formgroup-active');
+    });
+
+    function errorfield(field){
+      $(field).addClass('formgroup-error');
+      console.log(field);
+    }
+
+    $("#waterform").submit(function() {
+      var stopsubmit = false;
+
+      if($('#name').val() == "") {
+        errorfield('#name-form');
+        stopsubmit=true;
+      }
+      if($('#email').val() == "") {
+        errorfield('#email-form');
+        stopsubmit=true;
+      }
+      if(stopsubmit) return false;
+    });
+
+  });
+
+</script>
+
+<div id="form">
+<br>
+  <H2 style="color: #F44336" align="center"> Nouveau message </H2>
+  <form  (ngSubmit)="onSubmit()"  >
+    <div *ngIf="alert"  class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>Message envoyé</strong>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <div class="formgroup" id="name-form">
+      <label style="color: #F44336" >Adresse</label>
+      <input type="text"  class="form-control" id="to_address" name="to_address"  required  [(ngModel)]="emailMessage.to_address" >
+    </div>
+
+    <div class="formgroup" id="email-form">
+      <label for="subject" style="color: #F44336" >Object</label>
+      <input type="text" class="form-control"  id="subject" name="subject" required [(ngModel)]="emailMessage.subject" >
+    </div>
+
+    <div class="formgroup" id="message-form">
+      <label for="body" style="color: #F44336" >message</label>
+      <textarea  type="email" class="form-control"  id = "body" name="body"  required [(ngModel)]="emailMessage.body"></textarea>
+    </div>
+<br>
+    <div class="form-group">
+      <button type="submit" class=" btn btn-outline-danger btn-lg btn-block">Envoyer</button>
+    </div>
+    <br> <br>
+  </form>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<div  [hidden]="submitted"  class="signup-form" >
+
+  <form  (ngSubmit)="onSubmit()"  >
+
+    <div class="form-group">
+        <div class="col"><input type="text"  class="form-control" id="to_address" name="to_address" placeholder="to_address" required [(ngModel)]="emailMessage.to_address" ></div>
+    </div>
+
+    <div class="form-group">
+      <div class="col"> <input type="text" class="form-control"  id="subject" name="subject" placeholder="subject" required [(ngModel)]="emailMessage.subject" ></div>
+    </div>
+
+
+    <div class="form-group">
+      <textarea  type="email" class="form-control"  id = "body" name="body" placeholder="body" required [(ngModel)]="emailMessage.body"> </textarea>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-success btn-lg btn-block">Envoyer</button>
+    </div>
+
+
+  </form>
+
+</div>
+
+-->

@@ -1,0 +1,61 @@
+
+
+
+<div class="centrer">
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <div class="container">
+    <div class="panel-heading">
+       <img src="../../assets/logo2.PNG" alt="">
+    </div>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+
+      <div class="navbar-nav ml-auto">
+        <div class="navbar-nav">
+          <a href="" class="nav-item nav-link active">Acceuil</a>
+          <a href="http://www.made-in-tunisia.net/vitrine/contact.php?tc1=lKqXnq2S" class="nav-item nav-link">Contact</a>
+          <a href="https://www.keejob.com/offres-emploi/companies/5340/tritux/" class="nav-item nav-link">Emplacement</a>
+          <a href="https://www.tritux.fr/about-me/" class="nav-item nav-link">A propos de nous </a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </nav>
+  <p class="ex2" style="color: #2E64FE">  Nos offres de stage </p>
+
+</div>
+
+
+
+<br>
+
+  <div class="album py-5 bg-light">
+    <div class="container" >
+
+      <div class="row">
+        <div  *ngFor="let employee of sujets | async"   class="col-md-4"  >
+
+          <div class="card mb-4 box-shadow">
+            <div class="card-body" style="background-color:#ffffff">
+              <h5 class="card-text"> {{employee.titre}} </h5>
+              <br>
+              <a [routerLink]="" (click)="sujetDetails(employee.id)"> <h5> Voir details et Postuler </h5> </a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+<router-outlet></router-outlet>
+
+
+

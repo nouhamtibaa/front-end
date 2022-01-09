@@ -1,0 +1,70 @@
+
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <div class="container">
+      <div class="panel-heading">
+       <!--  <img src="../../assets/logo2.PNG" alt=""> -->
+      </div>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+
+        <div class="navbar-nav ml-auto">
+          <div class="navbar-nav">
+            <a href="" class="nav-item nav-link active">Acceuil</a>
+            <a href="http://www.made-in-tunisia.net/vitrine/contact.php?tc1=lKqXnq2S" class="nav-item nav-link">Contact</a>
+            <a href="https://www.keejob.com/offres-emploi/companies/5340/tritux/" class="nav-item nav-link">Emplacement</a>
+            <a href="https://www.tritux.fr/about-me/" class="nav-item nav-link">A propos de nous </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+<body  background="src= ../../assets/tritux2.jpg">
+<br>
+<div class="login-form">
+  <form #loginForm="ngForm">
+    <h2 class="text-center">Connexion</h2>
+    <p><em>{{message}}</em></p>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="username" id="username" [(ngModel)]="username" name="username" required="required">
+    </div>
+    <div class="form-group">
+      <input type="password" id="password" class="form-control" placeholder="Password" [(ngModel)]="password" name="password" required>
+    </div>
+
+  <div class="form-group">
+    <button (click)="login()" type="submit"  class="btn btn-success btn-block" >Se connecter</button>
+  </div>
+
+
+  <p class="text-center"><a [routerLink]="" (click)="createAccount()">Créer un compte</a></p>
+  </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
